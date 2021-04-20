@@ -3,6 +3,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App.jsx'
+import Store from './store/index.jsx'
 // import reportWebVitals from './reportWebVitals'
 
 const theme = createMuiTheme({
@@ -19,9 +20,11 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Store>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </Store>
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -1,33 +1,30 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { useFabStyles } from './hooks/use-styles'
+import { Context } from './store/index'
 import Fab from '@material-ui/core/Fab'
 import RefreshIcon from '@material-ui/icons/Refresh'
 import Breath from './components/Breath'
-import RoundSettings from './components/RoundSettings'
-import Grid from '@material-ui/core/Grid'
+// import RoundSettings from './components/RoundSettings'
 
 const App = () => {
-  const [round, setRound] = useState(0)
+  const [state, dispatch] = useContext(Context)
   const fabClasses = useFabStyles()
 
+  const handleClick = () => {
+    dispatch({ type: 'SET_ROUND', payload: state.round + 1 })
+  }
+
+  console.log('state: ', state)
+
   return (
-    <div className="App">
-      {/* <Grid container justify="center" alignItems="center"> */}
-      {/* <div className="breath-wrapper">
-        <Breath key={round} />
-      </div> */}
-      {/* <Grid item xs={12}>
-          <RoundSettings />
-        </Grid> */}
-      <RoundSettings />
-      <Fab
-        classes={fabClasses}
-        color="primary"
-        onClick={() => setRound(round + 1)}
-      >
+    <div className='App'>
+      <div className='breath-wrapper'>
+        <Breath key={state.round} />
+      </div>
+      {/* <RoundSettings /> */}
+      <Fab classes={fabClasses} color='primary' onClick={handleClick}>
         <RefreshIcon />
       </Fab>
-      {/* </Grid> */}
     </div>
   )
 }

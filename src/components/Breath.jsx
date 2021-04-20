@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const Breath = ({}) => {
+const Breath = () => {
   const [count, setCount] = useState(1)
 
-  const handleAnimationComplete = (value) => {
-    console.log('value: ', value)
-  }
+  // const handleAnimationComplete = (value) => {
+  //   console.log('value: ', value)
+  // }
 
   const handleUpdate = ({ scale }) => {
     if (scale === 1) {
@@ -17,32 +17,33 @@ const Breath = ({}) => {
   const bubbleTransistion = {
     duration: 3.15,
     ease: 'easeInOut',
-    loop: 4,
+    repeat: 4,
+    repeatType: 'loop',
   }
 
   return (
     <>
       <motion.div
         onUpdate={handleUpdate}
-        className="breath-bubble"
+        className='breath-bubble'
         style={{ background: '#367676' }}
         animate={{ scale: [1, 10, 1] }}
         transition={bubbleTransistion}
       />
       <motion.div
-        className="breath-bubble"
+        className='breath-bubble'
         style={{ background: '#489e9e' }}
         animate={{ scale: [1, 9, 1] }}
         transition={bubbleTransistion}
       />
       <motion.div
-        className="breath-bubble"
+        className='breath-bubble'
         style={{ background: '#5ac6c6' }}
         animate={{ scale: [1, 8, 1] }}
         transition={bubbleTransistion}
       />
       <motion.div
-        className="breath-bubble"
+        className='breath-bubble'
         style={{ background: 'none' }}
         animate={{
           scale: [1, 8, 1],
