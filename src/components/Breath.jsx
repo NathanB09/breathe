@@ -40,6 +40,15 @@ const Breath = ({}) => {
         style={{ background: '#5ac6c6' }}
         animate={{ scale: [1, 8, 1] }}
         transition={bubbleTransistion}
+      />
+      <motion.div
+        className="breath-bubble"
+        style={{ background: 'none' }}
+        animate={{
+          scale: [1, 8, 1],
+          opacity: [0, 0.2, 0.4, 0.6, 0.8, 1, 1, 0],
+        }}
+        transition={bubbleTransistion}
       >
         {count}
       </motion.div>
