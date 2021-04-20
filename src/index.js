@@ -1,9 +1,9 @@
+import './assets/css/index.css'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import App from './App.jsx'
 // import reportWebVitals from './reportWebVitals'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   palette: {
