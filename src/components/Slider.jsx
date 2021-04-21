@@ -3,11 +3,11 @@ import MSlider from '@material-ui/core/Slider'
 import Typography from '@material-ui/core/Typography'
 import PropTypes from 'prop-types'
 
-const Slider = ({ label, type }) => {
+const Slider = ({ label, type, onChange, value }) => {
   const { valueDisplay, defaultValue, step, min, max, marks } = SLIDER_CONFIG[type]
 
   return (
-    <div>
+    <>
       <Typography id={label}>{label}</Typography>
       <MSlider
         aria-labelledby={label}
@@ -18,14 +18,18 @@ const Slider = ({ label, type }) => {
         min={min}
         max={max}
         marks={marks}
+        onChange={onChange}
+        value={value}
       />
-    </div>
+    </>
   )
 }
 
 Slider.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.number,
 }
 
 export default Slider
