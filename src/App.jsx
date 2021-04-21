@@ -1,30 +1,31 @@
-import { useContext } from 'react'
+import * as ACTION from './constants/action'
 import { useFabStyles } from './hooks/use-styles'
-import { Context } from './store/index'
+import { useGlobalState } from './hooks/use-global-state'
 import Fab from '@material-ui/core/Fab'
 import RefreshIcon from '@material-ui/icons/Refresh'
-import Breath from './components/Breath'
-// import RoundSettings from './components/RoundSettings'
+import Breathe from './components/Breathe'
+import SessionSettings from './components/SessionSettings'
 
 const App = () => {
-  const [state, dispatch] = useContext(Context)
+  const [state, dispatch] = useGlobalState()
   const fabClasses = useFabStyles()
 
   const handleClick = () => {
-    dispatch({ type: 'SET_ROUND', payload: state.round + 1 })
+    dispatch(ACTION.SET_ROUND, state.round + 1)
   }
 
   console.log('state: ', state)
 
   return (
     <div className='App'>
-      <div className='breath-wrapper'>
-        <Breath key={state.round} />
-      </div>
+      {/* <div className='breath-wrapper'>
+        <Breathe key={state.round} />
+      </div> */}
       {/* <RoundSettings /> */}
-      <Fab classes={fabClasses} color='primary' onClick={handleClick}>
+      <SessionSettings />
+      {/* <Fab classes={fabClasses} color='primary' onClick={handleClick}>
         <RefreshIcon />
-      </Fab>
+      </Fab> */}
     </div>
   )
 }
