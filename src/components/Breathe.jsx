@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const Breath = () => {
+const Breathe = () => {
   const [count, setCount] = useState(1)
 
   // const handleAnimationComplete = (value) => {
@@ -57,6 +57,6 @@ const Breath = () => {
   )
 }
 
-Breath.propTypes = {}
+Breathe.propTypes = {}
 
-export default Breath
+export default Breathe

@@ -1,4 +1,4 @@
-export const breatheCount = {
+export const breathCount = {
   valueDisplay: 'auto',
   defaultValue: 30,
   step: 1,
@@ -20,7 +20,7 @@ export const breatheCount = {
   ],
 }
 
-export const breatheHold = {
+export const breathHold = {
   valueDisplay: 'off',
   defaultValue: 1000,
   step: 500,

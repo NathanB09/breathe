@@ -1,7 +1,7 @@
-import * as ACTION from './action/index.js'
+import * as ACTION from './action/index'
 
-const Reducer = (state, action) => {
-  return ACTION[action.type](state, action)
+const reducer = (state, action) => {
+  return ACTION[action.type] ? ACTION[action.type](state, action) : state
 }
 
-export default Reducer
+export default reducer
