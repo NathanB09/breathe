@@ -13,7 +13,7 @@ const BreathCount = () => {
   return (
     <Card>
       <Slider
-        label='Breath Count'
+        label='Breath Count / Round'
         type='breathCount'
         onChange={handleChange}
         value={state.breathCount}

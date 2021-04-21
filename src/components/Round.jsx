@@ -14,7 +14,7 @@ const Round = ({ name, round }) => {
   return (
     <Card>
       <p>Round {round}</p>
-      <Slider label='Breathe Hold' type='breathHold' onChange={handleChange} value={state[name]} />
+      <Slider label='Breath Hold' type='breathHold' onChange={handleChange} value={state[name]} />
     </Card>
   )
 }
