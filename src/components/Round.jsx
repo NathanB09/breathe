@@ -4,28 +4,24 @@ import Slider from './Slider'
 import Card from './Card'
 import PropTypes from 'prop-types'
 
-const Round = ({ key }) => {
+const Round = ({ name, round }) => {
   const [state, dispatch] = useGlobalState()
 
   const handleChange = (event, value) => {
-    console.log('value: ', value)
+    dispatch(ACTION.SET_ROUND_TIME, { name, value })
   }
 
   return (
     <Card>
-      <p>Round {key}</p>
-      <Slider
-        label='Breathe Hold'
-        type='breathHold'
-        onChange={handleChange}
-        value={state[`round${key}`]}
-      />
+      <p>Round {round}</p>
+      <Slider label='Breathe Hold' type='breathHold' onChange={handleChange} value={state[name]} />
     </Card>
   )
 }
 
 Round.propTypes = {
-  key: PropTypes.number,
+  name: PropTypes.string,
+  round: PropTypes.number,
 }
 
 export default Round
