@@ -9,9 +9,9 @@ import Store from './store/index.jsx'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#dc7d93',
-      main: '#d45d79',
-      dark: '#944154',
+      light: '#8b788f',
+      main: '#6e5773',
+      dark: '#4d3c50',
       contrastText: '#fff',
     },
     type: 'dark',

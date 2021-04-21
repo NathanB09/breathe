@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const scale = [1, 10, 1]
+
 const Breathe = () => {
   const [count, setCount] = useState(1)
 
-  // const handleAnimationComplete = (value) => {
-  //   console.log('value: ', value)
-  // }
+  const handleAnimationComplete = (value) => {
+    console.log('value: ', value)
+  }
 
   const handleUpdate = ({ scale }) => {
     if (scale === 1) {
@@ -14,7 +16,7 @@ const Breathe = () => {
     }
   }
 
-  const bubbleTransistion = {
+  const transition = {
     duration: 3.15,
     ease: 'easeInOut',
     repeat: 4,
@@ -23,36 +25,27 @@ const Breathe = () => {
 
   return (
     <>
+      <h3>Hold</h3>
       <motion.div
+        onAnimationComplete={handleAnimationComplete}
         onUpdate={handleUpdate}
-        className='breath-bubble'
-        style={{ background: '#367676' }}
-        animate={{ scale: [1, 10, 1] }}
-        transition={bubbleTransistion}
+        className='breath-bubble bubble-1'
+        animate={{ scale }}
+        transition={transition}
       />
+      <motion.div className='breath-bubble bubble-2' animate={{ scale }} transition={transition} />
+      <motion.div className='breath-bubble bubble-3' animate={{ scale }} transition={transition} />
       <motion.div
-        className='breath-bubble'
-        style={{ background: '#489e9e' }}
-        animate={{ scale: [1, 9, 1] }}
-        transition={bubbleTransistion}
-      />
-      <motion.div
-        className='breath-bubble'
-        style={{ background: '#5ac6c6' }}
-        animate={{ scale: [1, 8, 1] }}
-        transition={bubbleTransistion}
-      />
-      <motion.div
-        className='breath-bubble'
-        style={{ background: 'none' }}
+        className='breath-bubble bubble-4'
         animate={{
-          scale: [1, 8, 1],
+          scale,
           opacity: [0, 0.2, 0.4, 0.6, 0.8, 1, 1, 0],
         }}
-        transition={bubbleTransistion}
+        transition={transition}
       >
         {count}
       </motion.div>
+      <h3>1:00</h3>
     </>
   )
 }

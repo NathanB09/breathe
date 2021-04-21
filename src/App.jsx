@@ -18,11 +18,10 @@ const App = () => {
 
   return (
     <div className='App'>
-      {/* <div className='breath-wrapper'>
+      <div className='breath-wrapper'>
         <Breathe key={state.round} />
-      </div> */}
-      {/* <RoundSettings /> */}
-      <SessionSettings />
+      </div>
+      {/* <SessionSettings /> */}
       {/* <Fab classes={fabClasses} color='primary' onClick={handleClick}>
         <RefreshIcon />
       </Fab> */}
