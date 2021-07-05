@@ -7,7 +7,9 @@ const initialState = {
   round: 1,
   breathCount: 30,
   transitionType: MOTION.DEFAULT,
-  scaleType: MOTION.DEFAULT
+  scaleType: MOTION.DEFAULT,
+  timerActive: false,
+  countdownActive: false
 }
 
 export const Context = createContext(initialState)

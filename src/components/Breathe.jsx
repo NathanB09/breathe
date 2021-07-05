@@ -15,7 +15,17 @@ const Breathe = () => {
   const scale = MOTION.SCALE[scaleType]
 
   const handleAnimationComplete = (value) => {
-    // setTimeout(() => dispatch(ACTION.SET_ROUND, state.round + 1), 5000)
+    if (transitionType !== MOTION.HOLD && scaleType !== MOTION.REVERSE) {
+      dispatch(ACTION.TOGGLE_TIMER)
+    }
+
+    if (scaleType === MOTION.REVERSE) {
+      setTimeout(() => {
+        dispatch(ACTION.SET_TRANSITION, MOTION.DEFAULT)
+        dispatch(ACTION.SET_SCALE, MOTION.DEFAULT)
+        dispatch(ACTION.SET_ROUND, state.round + 1)
+      }, 3000)
+    }
   }
 
   const handleUpdate = ({ scale }) => {
