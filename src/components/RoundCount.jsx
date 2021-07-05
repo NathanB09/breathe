@@ -1,7 +1,5 @@
 import * as ACTION from '../constants/action'
 import { useGlobalState } from '../hooks/use-global-state'
-import Button from '@material-ui/core/Button'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 const RoundCount = ({}) => {
   const [state, dispatch] = useGlobalState()
@@ -15,10 +13,10 @@ const RoundCount = ({}) => {
   }
 
   return (
-    <ButtonGroup color='primary' variant='contained'>
-      <Button onClick={removeRound}>- Round</Button>
-      <Button onClick={addRound}>+ Round</Button>
-    </ButtonGroup>
+    <div>
+      <button onClick={removeRound}>- Round</button>
+      <button onClick={addRound}>+ Round</button>
+    </div>
   )
 }
 

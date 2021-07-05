@@ -1,6 +1,5 @@
 import * as ACTION from '../constants/action'
 import { useGlobalState } from '../hooks/use-global-state'
-import Slider from './Slider'
 import Card from './Card'
 
 const BreathCount = () => {
@@ -11,20 +10,8 @@ const BreathCount = () => {
   }
 
   return (
-    // <Card>
-    //   <Slider
-    //     label='Breath Count / Round'
-    //     type='breathCount'
-    //     onChange={handleChange}
-    //     value={state.breathCount}
-    //   />
-    // </Card>
-    <Slider
-      label='Breath Count / Round'
-      type='breathCount'
-      onChange={handleChange}
-      value={state.breathCount}
-    />
+    <Card>
+    </Card>
   )
 }
 
