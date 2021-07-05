@@ -1,13 +1,21 @@
+import * as ACTION from '../constants/action'
+import * as MOTION from '../constants/motion'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useGlobalState } from '../hooks/use-global-state'
 
-const scale = [1, 10, 1]
+const opacity = [0, 0.2, 0.4, 0.6, 0.8, 1, 1, 0]
 
 const Breathe = () => {
+  const [state, dispatch] = useGlobalState()
   const [count, setCount] = useState(1)
 
+  const { transitionType, scaleType } = state
+  const transition = MOTION.TRANSITION[transitionType]
+  const scale = MOTION.SCALE[scaleType]
+
   const handleAnimationComplete = (value) => {
-    console.log('value: ', value)
+    // setTimeout(() => dispatch(ACTION.SET_ROUND, state.round + 1), 5000)
   }
 
   const handleUpdate = ({ scale }) => {
@@ -16,16 +24,8 @@ const Breathe = () => {
     }
   }
 
-  const transition = {
-    duration: 3.15,
-    ease: 'easeInOut',
-    repeat: 4,
-    repeatType: 'loop',
-  }
-
   return (
     <>
-      <h3>Hold</h3>
       <motion.div
         onAnimationComplete={handleAnimationComplete}
         onUpdate={handleUpdate}
@@ -39,13 +39,12 @@ const Breathe = () => {
         className='breath-bubble bubble-4'
         animate={{
           scale,
-          opacity: [0, 0.2, 0.4, 0.6, 0.8, 1, 1, 0],
+          opacity
         }}
         transition={transition}
       >
-        {count}
+        {transitionType !== MOTION.HOLD ? count : null}
       </motion.div>
-      <h3>1:00</h3>
     </>
   )
 }

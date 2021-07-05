@@ -1,4 +1,6 @@
 export * from './set-round'
+export * from './set-transition'
+export * from './set-scale'
 export * from './add-round'
 export * from './remove-round'
 export * from './set-breath-count'

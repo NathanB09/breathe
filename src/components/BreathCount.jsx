@@ -1,20 +1,20 @@
-import * as ACTION from '../constants/action'
-import { useGlobalState } from '../hooks/use-global-state'
-import Card from './Card'
+// import * as ACTION from '../constants/action'
+// import { useGlobalState } from '../hooks/use-global-state'
+// import Card from './Card'
 
-const BreathCount = () => {
-  const [state, dispatch] = useGlobalState()
+// const BreathCount = () => {
+//   const [state, dispatch] = useGlobalState()
 
-  const handleChange = (event, value) => {
-    dispatch(ACTION.SET_BREATH_COUNT, value)
-  }
+//   const handleChange = (event, value) => {
+//     dispatch(ACTION.SET_BREATH_COUNT, value)
+//   }
 
-  return (
-    <Card>
-    </Card>
-  )
-}
+//   return (
+//     <Card>
+//     </Card>
+//   )
+// }
 
-BreathCount.propTypes = {}
+// BreathCount.propTypes = {}
 
-export default BreathCount
+// export default BreathCount
