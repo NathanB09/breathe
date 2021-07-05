@@ -42,15 +42,22 @@ p {
   margin: 0;
 }
 
-/* ---- Components ---- */
-
-/* Breath */
-.breath-wrapper {
-  min-height: 100vh;
+.App {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* ---- Components ---- */
+
+/* Breath */
+.breath-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 1000; */
 }
 
 .breath-bubble {

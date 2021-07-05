@@ -1,27 +1,25 @@
-import * as ACTION from '../constants/action'
-import { useGlobalState } from '../hooks/use-global-state'
-import Button from '@material-ui/core/Button'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
+// import * as ACTION from '../constants/action'
+// import { useGlobalState } from '../hooks/use-global-state'
 
-const RoundCount = ({}) => {
-  const [state, dispatch] = useGlobalState()
+// const RoundCount = ({}) => {
+//   const [state, dispatch] = useGlobalState()
 
-  const addRound = () => {
-    dispatch(ACTION.ADD_ROUND)
-  }
+//   const addRound = () => {
+//     dispatch(ACTION.ADD_ROUND)
+//   }
 
-  const removeRound = () => {
-    dispatch(ACTION.REMOVE_ROUND)
-  }
+//   const removeRound = () => {
+//     dispatch(ACTION.REMOVE_ROUND)
+//   }
 
-  return (
-    <ButtonGroup color='primary' variant='contained'>
-      <Button onClick={removeRound}>- Round</Button>
-      <Button onClick={addRound}>+ Round</Button>
-    </ButtonGroup>
-  )
-}
+//   return (
+//     <div>
+//       <button onClick={removeRound}>- Round</button>
+//       <button onClick={addRound}>+ Round</button>
+//     </div>
+//   )
+// }
 
-RoundCount.propTypes = {}
+// RoundCount.propTypes = {}
 
-export default RoundCount
+// export default RoundCount
