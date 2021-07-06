@@ -49,7 +49,7 @@ const Breathe = () => {
         className='breath-bubble bubble-4'
         animate={{
           scale,
-          opacity
+          opacity,
         }}
         transition={transition}
       >
