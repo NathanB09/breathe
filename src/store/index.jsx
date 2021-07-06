@@ -9,7 +9,9 @@ const initialState = {
   transitionType: MOTION.DEFAULT,
   scaleType: MOTION.DEFAULT,
   timerActive: false,
-  countdownActive: false
+  countdownActive: false,
+  showStart: true,
+  sessionHasStarted: false,
 }
 
 export const Context = createContext(initialState)
