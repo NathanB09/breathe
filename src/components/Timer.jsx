@@ -3,7 +3,7 @@ import { useGlobalState } from '../hooks/use-global-state'
 import formatTime from '../helper/format-time'
 
 const Timer = () => {
-  const [{ timerActive, countdownActive }, dispatch] = useGlobalState()
+  const [{ timerActive, countdownActive }] = useGlobalState()
   const startingTime = countdownActive ? 15 : 0
   const [seconds, setSeconds] = useState(startingTime)
 
@@ -12,9 +12,9 @@ const Timer = () => {
     if (timerActive || countdownActive) {
       interval = setInterval(() => {
         if (countdownActive) {
-          setSeconds(seconds => seconds - 1)
+          setSeconds((seconds) => seconds - 1)
         } else {
-          setSeconds(seconds => seconds + 1)
+          setSeconds((seconds) => seconds + 1)
         }
       }, 1000)
     } else {
@@ -26,9 +26,7 @@ const Timer = () => {
 
   const time = formatTime(seconds)
 
-  return (
-    <div>{time}</div>
-  )
+  return <div>{time}</div>
 }
 
 Timer.propTypes = {}

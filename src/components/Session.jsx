@@ -5,7 +5,7 @@ import { useGlobalState } from '../hooks/use-global-state'
 import Breathe from './Breathe'
 import Timer from './Timer'
 
-const Session = ({}) => {
+const Session = () => {
   const [state, dispatch] = useGlobalState()
 
   const handleContinue = () => {
@@ -21,8 +21,16 @@ const Session = ({}) => {
     }, 17000)
   }
 
+  const handleEndSession = () => {
+    dispatch(ACTION.END_SESSION)
+  }
+
+  const handleExit = () => {
+    setTimeout(() => dispatch(ACTION.TOGGLE_SHOW_START), 500)
+  }
+
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={handleExit}>
       {state.sessionHasStarted && (
         <motion.div
           key='Session'
@@ -43,6 +51,12 @@ const Session = ({}) => {
               </h3>
               <button onClick={handleContinue} style={{ position: 'absolute', marginTop: '200px' }}>
                 Continue
+              </button>
+              <button
+                onClick={handleEndSession}
+                style={{ position: 'absolute', marginTop: '250px' }}
+              >
+                End Session
               </button>
             </>
           )}
