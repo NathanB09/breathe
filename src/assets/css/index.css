@@ -34,21 +34,30 @@ p {
 
 /* Session */
 .session {
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Breath */
-.breath-wrapper {
+/* RoundTime */
+.round-time {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Breathe */
+.breathe-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.breath-bubble {
+.breathe-bubble {
   position: absolute;
   border-radius: 50%;
   background: #367676;
@@ -57,47 +66,47 @@ p {
   justify-content: center;
 }
 
-.bubble-1 {
+.breathe-bubble.bubble-1 {
   background: #367676;
   width: 48px;
   height: 48px;
 }
 
-.bubble-2 {
+.breathe-bubble.bubble-2 {
   background: #489e9e;
   width: 40px;
   height: 40px;
 }
 
-.bubble-3 {
+.breathe-bubble.bubble-3 {
   background: #5ac6c6;
   width: 32px;
   height: 32px;
 }
 
-.bubble-4 {
+.breathe-bubble.bubble-4 {
   background: none;
   width: 32px;
   height: 32px;
 }
 
 @media only screen and (max-width: 600px) {
-  .bubble-1 {
+  .breathe-bubble.bubble-1 {
     width: 32px;
     height: 32px;
   }
 
-  .bubble-2 {
+  .breathe-bubble.bubble-2 {
     width: 26px;
     height: 26px;
   }
 
-  .bubble-3 {
+  .breathe-bubble.bubble-3 {
     width: 20px;
     height: 20px;
   }
 
-  .bubble-4 {
+  .breathe-bubble.bubble-4 {
     width: 8px;
     height: 8px;
   }

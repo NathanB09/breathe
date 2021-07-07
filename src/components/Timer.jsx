@@ -26,9 +26,7 @@ const Timer = () => {
 
   const time = formatTime(seconds)
 
-  return <div>{time}</div>
+  return <>{time}</>
 }
-
-Timer.propTypes = {}
 
 export default Timer
