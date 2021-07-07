@@ -1,6 +1,6 @@
-export default (seconds) => {
-  const min = Math.floor(seconds/60)
-  const sec = seconds%60
+const formatTime = (seconds) => {
+  const min = Math.floor(seconds / 60)
+  const sec = seconds % 60
   const minDoubleDigits = min > 9
   const secDoubleDigits = sec > 9
 
@@ -18,3 +18,5 @@ export default (seconds) => {
     return secDoubleDigits ? `00:${sec}` : `00:0${sec}`
   }
 }
+
+export default formatTime

@@ -1,18 +1,7 @@
-import * as MOTION from '../constants/motion'
 import React, { createContext, useReducer } from 'react'
 import reducer from './reducer'
+import initialState from '../constants/initial-state'
 import PropTypes from 'prop-types'
-
-const initialState = {
-  round: 1,
-  breathCount: 30,
-  transitionType: MOTION.DEFAULT,
-  scaleType: MOTION.DEFAULT,
-  timerActive: false,
-  countdownActive: false,
-  showStart: true,
-  sessionHasStarted: false,
-}
 
 export const Context = createContext(initialState)
 

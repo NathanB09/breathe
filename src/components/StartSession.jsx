@@ -2,7 +2,7 @@ import * as ACTION from '../constants/action'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGlobalState } from '../hooks/use-global-state'
 
-const StartSession = ({}) => {
+const StartSession = () => {
   const [state, dispatch] = useGlobalState()
 
   const handleClick = () => {
