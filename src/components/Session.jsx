@@ -1,29 +1,12 @@
 import * as ACTION from '../constants/action'
-import * as MOTION from '../constants/motion'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGlobalState } from '../hooks/use-global-state'
 import Breathe from './Breathe'
 import RoundTime from './RoundTime'
+import SessionControls from './SessionControls'
 
 const Session = () => {
   const [state, dispatch] = useGlobalState()
-
-  const handleContinue = () => {
-    dispatch(ACTION.SET_TRANSITION, MOTION.HOLD)
-    dispatch(ACTION.SET_SCALE, MOTION.HOLD)
-    dispatch(ACTION.TOGGLE_TIMER)
-
-    setTimeout(() => dispatch(ACTION.TOGGLE_COUNTDOWN), 2000)
-
-    setTimeout(() => {
-      dispatch(ACTION.TOGGLE_COUNTDOWN)
-      dispatch(ACTION.SET_SCALE, MOTION.REVERSE)
-    }, 17000)
-  }
-
-  const handleEndSession = () => {
-    dispatch(ACTION.END_SESSION)
-  }
 
   const handleExit = () => {
     setTimeout(() => dispatch(ACTION.TOGGLE_SHOW_START), 500)
@@ -41,20 +24,7 @@ const Session = () => {
         >
           <Breathe key={state.round} />
           <RoundTime />
-
-          {state.timerActive && (
-            <>
-              <button onClick={handleContinue} style={{ position: 'absolute', marginTop: '200px' }}>
-                Continue
-              </button>
-              <button
-                onClick={handleEndSession}
-                style={{ position: 'absolute', marginTop: '250px' }}
-              >
-                End Session
-              </button>
-            </>
-          )}
+          <SessionControls />
         </motion.div>
       )}
     </AnimatePresence>

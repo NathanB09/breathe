@@ -2,7 +2,7 @@ import * as ACTION from '../constants/action'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGlobalState } from '../hooks/use-global-state'
 
-const StartSession = () => {
+const StartScreen = () => {
   const [state, dispatch] = useGlobalState()
 
   const handleClick = () => {
@@ -17,7 +17,7 @@ const StartSession = () => {
     <AnimatePresence onExitComplete={handleExit}>
       {state.showStart && (
         <motion.div
-          key='StartSession'
+          key='StartScreen'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -31,6 +31,4 @@ const StartSession = () => {
   )
 }
 
-StartSession.propTypes = {}
-
-export default StartSession
+export default StartScreen

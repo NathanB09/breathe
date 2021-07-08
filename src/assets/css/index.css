@@ -50,6 +50,13 @@ p {
   gap: 20px;
 }
 
+/* SessionControls */
+.session-controls {
+  position: absolute;
+  display: flex;
+  margin-top: 200px;
+}
+
 /* Breathe */
 .breathe-wrapper {
   display: flex;
