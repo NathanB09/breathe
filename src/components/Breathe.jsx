@@ -34,7 +34,7 @@ const Breathe = () => {
   }
 
   return (
-    <div className='breathe-wrapper'>
+    <div className='breathe'>
       <motion.div
         onAnimationComplete={handleAnimationComplete}
         onUpdate={handleUpdate}

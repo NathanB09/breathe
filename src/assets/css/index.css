@@ -5,7 +5,8 @@
 
 body {
   margin: 0;
-  background: #191818;
+  /* background: #191818; */
+  background: #2f2f2f;
   height: 100vh;
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,31 +23,56 @@ p {
   margin: 0;
 }
 
-.App {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+button {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(180deg, rgba(109, 109, 109, 0.6), rgba(32, 32, 32, 0.8));
+  /* background: #2a2a2a; */
+  box-shadow: 0 10px 20px #202020, 0 -10px 20px #6d6d6d;
+}
+
+button i {
+  color: #5ac6c6;
+  font-size: 18px;
 }
 
 /* ---- Components ---- */
 
-/* Session */
-.session {
+.App,
+.start-screen,
+.session,
+.round-time,
+.breathe,
+.breathe-bubble {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* App */
+.App {
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* StartScreen */
+.start-screen {
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Session */
+.session {
+  flex-direction: column;
 }
 
 /* RoundTime */
 .round-time {
   position: absolute;
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
 }
 
@@ -54,23 +80,14 @@ p {
 .session-controls {
   position: absolute;
   display: flex;
-  margin-top: 200px;
-}
-
-/* Breathe */
-.breathe-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 300px;
+  gap: 35px;
 }
 
 .breathe-bubble {
   position: absolute;
   border-radius: 50%;
   background: #367676;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .breathe-bubble.bubble-1 {

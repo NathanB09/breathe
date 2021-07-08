@@ -18,12 +18,15 @@ const StartScreen = () => {
       {state.showStart && (
         <motion.div
           key='StartScreen'
+          className='start-screen'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <h1>Welcome to Breathe</h1>
-          <p>This breathing exercise app was inspired by the Wim Hof technique.</p>
+          <div>
+            <h1>Welcome to Breathe</h1>
+            <p>This breathing exercise app was inspired by the Wim Hof technique.</p>
+          </div>
           <button onClick={handleClick} title='Start Session'>
             <i className='fas fa-play' />
           </button>
