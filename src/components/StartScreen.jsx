@@ -24,7 +24,9 @@ const StartScreen = () => {
         >
           <h1>Welcome to Breathe</h1>
           <p>This breathing exercise app was inspired by the Wim Hof technique.</p>
-          <button onClick={handleClick}>Start Session</button>
+          <button onClick={handleClick} title='Start Session'>
+            <i className='fas fa-play' />
+          </button>
         </motion.div>
       )}
     </AnimatePresence>

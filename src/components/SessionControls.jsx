@@ -26,10 +26,10 @@ const SessionControls = () => {
     timerActive && (
       <div className='session-controls'>
         <button onClick={handleContinue} title='Continue'>
-          Continue
+          <i className='fas fa-step-forward' />
         </button>
         <button onClick={handleEndSession} title='End Session'>
-          End Session
+          <i className='fas fa-stop' />
         </button>
       </div>
     )
