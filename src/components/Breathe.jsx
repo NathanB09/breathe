@@ -7,10 +7,9 @@ import { useGlobalState } from '../hooks/use-global-state'
 const opacity = [0, 0.2, 0.4, 0.6, 0.8, 1, 1, 0]
 
 const Breathe = () => {
-  const [state, dispatch] = useGlobalState()
+  const [{ transitionType, scaleType, round }, dispatch] = useGlobalState()
   const [count, setCount] = useState(1)
 
-  const { transitionType, scaleType } = state
   const transition = MOTION.TRANSITION[transitionType]
   const scale = MOTION.SCALE[scaleType]
 
@@ -23,7 +22,7 @@ const Breathe = () => {
       setTimeout(() => {
         dispatch(ACTION.SET_TRANSITION, MOTION.DEFAULT)
         dispatch(ACTION.SET_SCALE, MOTION.DEFAULT)
-        dispatch(ACTION.SET_ROUND, state.round + 1)
+        dispatch(ACTION.SET_ROUND, round + 1)
       }, 3000)
     }
   }
@@ -35,18 +34,18 @@ const Breathe = () => {
   }
 
   return (
-    <>
+    <div className='breathe'>
       <motion.div
         onAnimationComplete={handleAnimationComplete}
         onUpdate={handleUpdate}
-        className='breath-bubble bubble-1'
+        className='breathe-bubble bubble-1'
         animate={{ scale }}
         transition={transition}
       />
-      <motion.div className='breath-bubble bubble-2' animate={{ scale }} transition={transition} />
-      <motion.div className='breath-bubble bubble-3' animate={{ scale }} transition={transition} />
+      <motion.div className='breathe-bubble bubble-2' animate={{ scale }} transition={transition} />
+      <motion.div className='breathe-bubble bubble-3' animate={{ scale }} transition={transition} />
       <motion.div
-        className='breath-bubble bubble-4'
+        className='breathe-bubble bubble-4'
         animate={{
           scale,
           opacity,
@@ -55,10 +54,8 @@ const Breathe = () => {
       >
         {transitionType !== MOTION.HOLD ? count : null}
       </motion.div>
-    </>
+    </div>
   )
 }
-
-Breathe.propTypes = {}
 
 export default Breathe

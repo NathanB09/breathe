@@ -1,10 +1,10 @@
-import StartSession from './components/StartSession'
+import StartScreen from './components/StartScreen'
 import Session from './components/Session'
 
 const App = () => {
   return (
     <div className='App'>
-      <StartSession />
+      <StartScreen />
       <Session />
     </div>
   )
