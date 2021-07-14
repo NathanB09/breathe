@@ -1,13 +1,13 @@
 const transition = {
-  duration: 3.15,
+  duration: 3.18,
   ease: 'easeInOut',
-  repeat: 2,
+  repeat: 29,
   repeatType: 'loop',
 }
 
 const holdTransition = {
   duration: 2,
-  ease: 'easeInOut'
+  ease: 'easeInOut',
 }
 
 const scale = [1, 10, 1]
@@ -24,10 +24,10 @@ export const REVERSE = 'REVERSE'
 export const SCALE = {
   [DEFAULT]: scale,
   [HOLD]: holdScale,
-  [REVERSE]: reverseScale
+  [REVERSE]: reverseScale,
 }
 
 export const TRANSITION = {
   [DEFAULT]: transition,
-  [HOLD]: holdTransition
+  [HOLD]: holdTransition,
 }
